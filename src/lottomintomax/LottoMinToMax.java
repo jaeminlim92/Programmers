@@ -2,6 +2,7 @@ package lottomintomax;
 
 public class LottoMinToMax {
     public int[] solution(int[] lotto, int[] win_nums) {
+        //Test Commit
         int match_cnt = 0;
         int zero_cnt = 0;
         for(int i: lotto){
