@@ -31,7 +31,7 @@ public class LottoMinToMax {
         LottoMinToMax lotto_max_min = new LottoMinToMax();
 
 
-        int[] lotto1 ={44, 1, 0, 0, 31, 25};
+        int[] lotto1 ={44, 1, 0, 0, 31, 25};  
         int[] win_nums ={31, 10, 45, 1, 6, 19};
 
         int[] answer = lotto_max_min.solution(lotto1, win_nums);
