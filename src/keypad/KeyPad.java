@@ -3,28 +3,28 @@ package keypad;
 public class KeyPad {
     public static String solution(int[] numbers, String hand) {
         StringBuilder sb = new StringBuilder();
-        int leftIndex = 10;	 // '*' => 10으로 치환
+        int leftIndex = 10;     // '*' => 10으로 치환
         int rightIndex = 12; // '#' => 12로 치환
 
-        for(int number : numbers) {
-            if(number == 1 || number == 4 || number == 7) { // Left
+        for (int number : numbers) {
+            if (number == 1 || number == 4 || number == 7) { // Left
                 sb.append("L");
                 leftIndex = number;
-            } else if(number == 3 || number == 6 || number == 9) {	// Right
+            } else if (number == 3 || number == 6 || number == 9) {    // Right
                 sb.append("R");
                 rightIndex = number;
             } else { // Center
                 int leftLength = getLength(leftIndex, number);
                 int rightLength = getLength(rightIndex, number);
 
-                if(leftLength > rightLength) {
+                if (leftLength > rightLength) {
                     sb.append("R");
                     rightIndex = number;
-                } else if(leftLength < rightLength) {
+                } else if (leftLength < rightLength) {
                     sb.append("L");
                     leftIndex = number;
                 } else {
-                    if(hand.equals("right")) {
+                    if (hand.equals("right")) {
                         sb.append("R");
                         rightIndex = number;
                     } else {
@@ -48,11 +48,11 @@ public class KeyPad {
         int numberX = number / 3;
         int numberY = 1;
 
-        return Math.abs(x-numberX) + Math.abs(y-numberY);
+        return Math.abs(x - numberX) + Math.abs(y - numberY);
     }
 
     public static void main(String[] args) {
-        int[] numbers = {1,2,3,4,5,6,8,9};
+        int[] numbers = {1, 2, 3, 4, 5, 6, 8, 9};
         String hand = "right";
 
         String solution = solution(numbers, hand);
