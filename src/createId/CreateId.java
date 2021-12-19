@@ -24,7 +24,7 @@ public class CreateId {
         public String exclude_char(String new_id){
             String canSpecialChar = "[^-_.a-z0-9]";
 
-            return new_id  = new_id.replaceAll(canSpecialChar,"");
+            return new_id  = new_id.replaceAll(canSpecialChar,""); 
         }
 
         //3단계
@@ -53,7 +53,7 @@ public class CreateId {
                 return "a";
             }
             return new_id;
-            
+
         }
 
         //6단계
