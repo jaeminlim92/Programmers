@@ -38,7 +38,7 @@ public class AESType {
             // throws가 싫어서 RuntimeException을 사용
             throw new RuntimeException(e);
         }
-        return encryptText;
+        return encryptText; 
     }
 
     public static void main(String[] args) {
