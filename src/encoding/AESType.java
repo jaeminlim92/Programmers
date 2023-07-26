@@ -23,6 +23,7 @@ public class AESType {
 
     public String encodeAes(String planeText, String secretKey) {
         String encryptText;
+        //커밋용 테스트
         try {
             Key key = new SecretKeySpec(secretKey.getBytes(StandardCharsets.UTF_8), "AES");
             // CBC 타입을 사용하고, 패딩 알고리즘은 PKCS5Padding 방식을 선택
