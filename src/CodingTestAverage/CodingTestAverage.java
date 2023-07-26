@@ -23,7 +23,7 @@ public class CodingTestAverage {
     }
 
 
-    public static String[] solution(String[] languages, int[][] scores) {
+    public static String[] solution(String[] languages, int[][] scores) { 
 
         List<String> answerList = new ArrayList<>();
 
