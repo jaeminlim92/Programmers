@@ -17,7 +17,7 @@ public class GoingHomeWork {
         String[][] plans2 = {{"aaa", "12:00", "20"}, {"bbb", "12:10", "30"},
             {"ccc", "12:40", "10"}};
 
-        String[] solution = solution(plans2);
+        String[] solution = solution(plans);
 
         System.out.println("solution = " + Arrays.toString(solution));
 
@@ -33,53 +33,42 @@ public class GoingHomeWork {
         Arrays.sort(plans, Comparator.comparingInt(a -> parseToMinute(a[1])));
 
         //스택선언하여 과제를 시작하다가 다하지 못한 것들을 넣어준다.
-        Stack<Plan> planStack = new Stack<Plan>();
-        for (int i = 0; i < plans.length - 1; i++) {
+        Stack<Plan> planStack = new Stack<>();
+        for (int i = 0; i < plans.length-1; i++) {
+
+            //현재과목시작시간, 다음과목시작시간
             int curentSubjectTime = parseToMinute(plans[i][1]);
             int nextSubjectTime = parseToMinute(plans[i + 1][1]);
+            int diffTime = nextSubjectTime - curentSubjectTime;
 
-            //만약 다음과목시작시간과 현재과목시간을 뺀 값이 과제하는제 필요한 시간보다 작다면
-            if (nextSubjectTime - curentSubjectTime < Integer.parseInt(plans[i][2])) {
-                //다하지 못한 과목과, 남은시간을 Stack에 넣어준다.
-                Plan remainSubject = new Plan(plans[i][0],
-                    Integer.parseInt(plans[i][2]) - (nextSubjectTime - curentSubjectTime));
-
-                planStack.push(remainSubject);
-                //시간 내에 현재과제를 완료했다면.
-            } else {
-                //완료한 과목을 완료 배열에 넣어준다.
+            if (diffTime < Integer.parseInt(plans[i][2])) {
+                //stack.add(new String[] {plans[i][0], String.valueOf(diff)});
+                Plan plan = new Plan(plans[i][0], Integer.parseInt(plans[i][2]) - diffTime);
+                planStack.push(plan);
+            }else {
                 answer[index++] = plans[i][0];
-                //남은시간을 계산한다.
-                int remainTime =
-                    nextSubjectTime - curentSubjectTime - (Integer.parseInt(plans[i][2]));
-
-                //그리고 남은 과목이 있다면 남은 과제를 풀어준다.
-                while (true) {
-                    if (!planStack.isEmpty()) {
-                        Plan remainSubject = planStack.pop();
-
-                        //남은 과목의 시간이 남은시간보다 적다면
-                        if (remainSubject.remainTime <= remainTime) {
-                            remainTime -= remainSubject.remainTime;
-                            answer[index++] = remainSubject.subject;
-                        } else {
-                            remainSubject.remainTime -= remainTime;
-                            planStack.push(remainSubject);
-                            break;
-                        }
-
-                    } else {
+                int remainTime = diffTime - Integer.parseInt(plans[0][2]);
+                while (!planStack.empty()) {
+                    Plan remainPlan = planStack.pop();
+                    if (remainPlan.remainTime > remainTime) {
+                        remainPlan.remainTime = remainPlan.remainTime - remainTime;
+                        planStack.push(remainPlan);
                         break;
+                    } else {
+                        answer[index++] = remainPlan.subject;
+                        remainTime = remainTime - remainPlan.remainTime;
                     }
 
-                    if (remainTime <= 0) {
+                    if(remainTime <= 0){
                         break;
                     }
                 }
             }
         }
 
-        while (!planStack.isEmpty()) {
+        answer[index++] = plans[plans.length-1][0];
+
+        while (!planStack.empty()){
             answer[index++] = planStack.pop().subject;
         }
 
