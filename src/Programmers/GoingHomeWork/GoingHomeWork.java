@@ -1,4 +1,4 @@
-package GoingHomeWork;
+package Programmers.GoingHomeWork;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -17,7 +17,7 @@ public class GoingHomeWork {
         String[][] plans2 = {{"aaa", "12:00", "20"}, {"bbb", "12:10", "30"},
             {"ccc", "12:40", "10"}};
 
-        String[] solution = solution(plans);
+        String[] solution = solution(plans2);
 
         System.out.println("solution = " + Arrays.toString(solution));
 

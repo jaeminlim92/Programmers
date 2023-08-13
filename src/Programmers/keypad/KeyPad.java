@@ -1,4 +1,4 @@
-package keypad;
+package Programmers.keypad;
 
 public class KeyPad {
     public static String solution(int[] numbers, String hand) {

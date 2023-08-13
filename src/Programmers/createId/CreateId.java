@@ -1,6 +1,4 @@
-package createId;
-
-import lottomintomax.LottoMinToMax;
+package Programmers.createId;
 
 public class CreateId {
 

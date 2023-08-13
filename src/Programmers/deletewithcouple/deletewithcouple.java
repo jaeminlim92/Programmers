@@ -1,11 +1,11 @@
-package deletewithcouple;
+package Programmers.deletewithcouple;
 
 import java.util.Stack;
 
 /**
  * 프로그래머스 문제 짝지어 제거하기
- * packageName    : deletewithcouple
- * fileName       : deletewithcouple
+ * packageName    : Programmers.deletewithcouple
+ * fileName       : Programmers.deletewithcouple
  * author         : jaeminlim
  * date           : 2022/07/09
  * description    :

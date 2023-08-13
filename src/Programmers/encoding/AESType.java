@@ -1,4 +1,4 @@
-package encoding;
+package Programmers.encoding;
 
 import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
@@ -9,7 +9,7 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 
 /**
- * packageName    : encoding
+ * packageName    : Programmers.encoding
  * fileName       : AESType
  * author         : jaeminlim
  * date           : 2022/07/27

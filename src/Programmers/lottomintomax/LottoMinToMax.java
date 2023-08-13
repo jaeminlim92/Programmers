@@ -1,4 +1,4 @@
-package lottomintomax;
+package Programmers.lottomintomax;
 
 public class LottoMinToMax {
     public int[] solution(int[] lotto, int[] win_nums) {

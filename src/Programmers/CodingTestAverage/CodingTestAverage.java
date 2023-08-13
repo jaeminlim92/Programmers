@@ -1,4 +1,4 @@
-package CodingTestAverage;
+package Programmers.CodingTestAverage;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package MarathonGame;
+package Programmers.MarathonGame;
 
 import java.util.Arrays;
 import java.util.HashMap;

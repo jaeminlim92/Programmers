@@ -1,6 +1,4 @@
-package numStringGrammer;
-
-import lottomintomax.LottoMinToMax;
+package Programmers.numStringGrammer;
 
 public class NumStringGrammer {
 
